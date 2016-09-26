@@ -2,14 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>ihor_tkanka</groupId>
-	<artifactId>ihor_tkanka</artifactId>
+	<groupId>anton_peshkov</groupId>
+	<artifactId>anton_peshkov</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>ihor_tkanka</name>
+	<name>anton_peshkov</name>
 	<url>http://maven.apache.org</url>
-
 	<properties>
 		<junit.version>4.8.2</junit.version>
 		<maven-compiler-plugin.version>3.0</maven-compiler-plugin.version>
@@ -61,6 +60,7 @@
 			</exclusions>
 		</dependency>
 
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -71,6 +71,9 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>5.1.3.Final</version>
 		</dependency>
+
+
+
 
 		<!-- Spring 3 dependencies -->
 		<dependency>
@@ -191,6 +194,7 @@
 		</dependency>
 
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -214,11 +218,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
 		</plugins>
 	</build>
 
-	<organization>
-		<url>tkanka.com.ua</url>
-	</organization>
 </project>
