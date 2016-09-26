@@ -1,4 +1,4 @@
-package FirstStepInMaven;
+package action03;
 
 /**
  * Hello world!
