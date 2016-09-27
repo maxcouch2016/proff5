@@ -10,5 +10,5 @@ package exemple;
  * @author kayentkanka
  */
 public class testik {
-    
+    public static void main(String args){}
 }
