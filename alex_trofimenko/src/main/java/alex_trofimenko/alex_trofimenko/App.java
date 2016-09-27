@@ -1,4 +1,4 @@
-package action03;
+package alex_trofimenko.alex_trofimenko;
 
 /**
  * Hello world!
