@@ -1,7 +1,13 @@
 package action04;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
  
 public class ProductShop {
 	Map<Product, String> contructors = new HashMap<Product, String>();
@@ -38,13 +44,23 @@ public class ProductShop {
 		System.out.println(contructors.size());
 	}
 
-	public void printContructor() {
+	public void printContructor(){
+		Set<String> set = new TreeSet<String>(contructors.values());
+		System.out.println(set);
 	}
-
-	public void printReverseContructor() {
+	public void printReverseContructor(){
+		List<String> list = new ArrayList<String>(contructors.values());
+		Collections.sort(list,Collections.reverseOrder());
+		System.out.println(list);
 	}
-
-	public void printNameProductByType(TypeProduct type) {
+	public void printNameProductByType(TypeProduct type){
+		Set<Map.Entry<Product, String>> set = contructors.entrySet();
+		Set<String> products = new HashSet<String>();
+		for(Map.Entry<Product, String> entry:set){
+			Product product = entry.getKey();
+			if(product.getType() == type)products.add(product.getName());
+		}
+		System.out.println(products);
 	}
 }
 
@@ -58,4 +74,13 @@ class Product {
 		this.type = type;
 		this.party = party;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public TypeProduct getType() {
+		return type;
+	}
+	
 }
