@@ -1,9 +1,10 @@
-package action04;
+package products;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -44,23 +45,32 @@ public class ProductShop {
 		System.out.println(contructors.size());
 	}
 
-	public void printContructor(){
-		Set<String> set = new TreeSet<String>(contructors.values());
-		System.out.println(set);
+	public void printContructor() {
+		Set<String> firms = new TreeSet<>();
+		firms.addAll(contructors.values());
+		System.out.println(firms);		
 	}
-	public void printReverseContructor(){
-		List<String> list = new ArrayList<String>(contructors.values());
-		Collections.sort(list,Collections.reverseOrder());
-		System.out.println(list);
+
+	public void printReverseContructor() {
+		Set<String> firms = new TreeSet<>(new Comparator<String>() {
+			@Override
+			public int compare(String o1, String o2) {				
+				return o2.compareTo(o1);
+			}			
+		});
+		firms.addAll(contructors.values());
+		System.out.println(firms);
 	}
-	public void printNameProductByType(TypeProduct type){
-		Set<Map.Entry<Product, String>> set = contructors.entrySet();
-		Set<String> products = new HashSet<String>();
-		for(Map.Entry<Product, String> entry:set){
-			Product product = entry.getKey();
-			if(product.getType() == type)products.add(product.getName());
+
+	public void printNameProductByType(TypeProduct type) {
+		Set<Product> products = contructors.keySet();
+		Set<String> names = new TreeSet<>();
+		for(Product product: products) {
+			if(product.getType() == type) {
+				names.add(product.getName());
+			}
 		}
-		System.out.println(products);
+		System.out.println(names);
 	}
 }
 
@@ -82,5 +92,6 @@ class Product {
 	public TypeProduct getType() {
 		return type;
 	}
+	
 	
 }
