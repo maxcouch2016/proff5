@@ -1,4 +1,4 @@
-package calculator;
+package hwWeek1.calculator;
 
 public abstract class AbstractCalc implements Calculator{
     protected String result;

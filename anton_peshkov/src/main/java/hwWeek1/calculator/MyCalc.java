@@ -1,4 +1,4 @@
-package calculator;
+package hwWeek1.calculator;
 
 //     Создать целочисленный калькулятор класс Calc наследник AbstractCalc, в котором реализовать метод inChar
 //     Вводимые символы такие: цифры, +, -, *, /, =
@@ -6,6 +6,7 @@ package calculator;
 //     Последовательность ввода такая: число1 + операция + число2 + равно.
 
 public class MyCalc extends AbstractCalc {
+	
 
 	@Override
 	public void inChar(char p) {
@@ -21,10 +22,12 @@ public class MyCalc extends AbstractCalc {
 	}
 
 	private void createNumber(char p) {
-		if(result==null || result.equals(String.valueOf(operation))){
-			result="";
+		if (result == null || result.equals(String.valueOf(operation))) {
+			result = "";
 		}
-		result += String.valueOf(p);
+		if (!(p == '0' && result.equals(""))) {
+			result += String.valueOf(p);
+		}
 	}
 
 	private void operation(char p) {
