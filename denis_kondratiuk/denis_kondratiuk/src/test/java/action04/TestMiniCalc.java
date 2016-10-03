@@ -8,54 +8,73 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 public class TestMiniCalc {
+	//
+	// // @Ignore
+	// @Test
+	// public void test() {
+	// System.out.println("jhgf");
+	// fail("Not yet implemented");
+	// }
+	//
+	// @Test
+	// public void test1() {
+	//
+	// MiniCalc calc = new MiniCalc();
+	// int a = 0;
+	// int b = 0;
+	// int resFact = calc.summa(a, b);
+	// int resTest = a + b;
+	// if (resTest != resFact)
+	// fail("Trouble!");
+	// }
+	//
+	// @Test
+	// public void test2() {
+	// MiniCalc calc = new MiniCalc();
+	// int a = 1;
+	// int b = 1;
+	// int resFact = calc.summa(a, b);
+	// int resTest = a + b;
+	// if (resTest != resFact)
+	// fail("Trouble!");
+	// }
+	//
+	// @Test
+	// public void test3() {
+	// MiniCalc calc = new MiniCalc();
+	// int a = 10;
+	// int b = 2;
+	// int resFact = calc.summa(a, b);
+	// int resTest = a + b;
+	// if (resTest != resFact)
+	// fail("Trouble!");
+	// }
+	//
+	// @Test
+	// public void test4() {
+	// // assertArrayEquals( new Integer[], new Object[]);
+	// // assertArrayEquals("message with errors", new Integer[], new
+	// // Object[]);
+	//
+	// }
+	//
+	// @Test(expected = NullPointerException.class)
+	// public void checkIfResultMore100() {
+	// MiniCalc calc = new MiniCalc();
+	// int a = 60;
+	// int b = 70;
+	// calc.summa(a, b);
+	// }
+	@Test(expected = ArithmeticException.class)
+	public void myltiplyTest1() {
+		MiniCalc miniCalc = new MiniCalc();
+		int expected = 2;
+		assertEquals(expected, miniCalc.divide(4, 2));
+		assertEquals(expected, miniCalc.divide(5, 2));
+		assertEquals(expected, miniCalc.divide(1, 0));
+		
+		
 
-//	@Ignore
-	@Test
-	public void test() {
-		System.out.println("jhgf");
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void test1(){
-		
-		MiniCalc calc = new MiniCalc();
-		int a = 0;
-		int b = 0;
-		int resFact = calc.summa(a, b);
-		int resTest = a + b;
-		if(resTest!=resFact) fail("Trouble!");
-	}
-	@Test
-	public void test2(){
-		MiniCalc calc = new MiniCalc();
-		int a = 1;
-		int b = 1;
-		int resFact = calc.summa(a, b);
-		int resTest = a + b;
-		if(resTest!=resFact) fail("Trouble!");
-	}
-	@Test
-	public void test3(){
-		MiniCalc calc = new MiniCalc();
-		int a = 10;
-		int b = 2;
-		int resFact = calc.summa(a, b);
-		int resTest = a + b;
-		if(resTest!=resFact) fail("Trouble!");
-	}
-	@Test
-	public void test4(){
-		//assertArrayEquals( new Integer[], new Object[]);
-		//assertArrayEquals("message with errors", new Integer[], new Object[]);
-		
-	}
-	@Test(expected=NullPointerException.class)
-	public void checkIfResultMore100(){
-		MiniCalc calc = new MiniCalc();
-		int a = 60;
-		int b = 70;
-		calc.summa(a, b);		
 	}
 
 }
