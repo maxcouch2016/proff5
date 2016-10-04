@@ -72,9 +72,6 @@ public class TestMiniCalc {
 		assertEquals(expected, miniCalc.divide(4, 2));
 		assertEquals(expected, miniCalc.divide(5, 2));
 		assertEquals(expected, miniCalc.divide(1, 0));
-		
-		
-
 	}
 
 }
