@@ -54,7 +54,6 @@ public class App extends Application{
 		btn.setText("b");
 		btn.setLayoutX(10);
 		btn.setLayoutY(50);
-		btn.setOnAction(new MyEvent());
 		
 		group.getChildren().add(text);
 		group.getChildren().add(btn);
