@@ -1,7 +1,6 @@
 package action06;
 
 public class WaitNotify extends Thread {
-	
 	public void f() {
 		while (true) {
 			synchronized (this) {

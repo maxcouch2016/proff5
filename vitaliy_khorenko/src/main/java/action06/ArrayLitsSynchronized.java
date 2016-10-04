@@ -13,6 +13,5 @@ public class ArrayLitsSynchronized {
 		
 		list.add(10);
 		list1.add(20);
-		//
 	}
 }

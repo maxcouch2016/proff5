@@ -16,6 +16,5 @@ public class StringBuilderExample {
 		String s3 = new String("ab");
 		if(s1==s3) System.out.println("==");
 		else System.out.println("!=");
-		//
 	}
 }
