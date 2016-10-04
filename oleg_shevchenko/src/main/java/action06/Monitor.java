@@ -49,7 +49,7 @@ class ThreadCreator extends Thread {
 				fw.append(msg);
 				fw.flush();
 				fw.close();
-				if(threadWriter.isAlive()) threadWriter.notify();
+				threadWriter.notify();
 			}
 		} catch (IOException exc) {
 			exc.printStackTrace();
