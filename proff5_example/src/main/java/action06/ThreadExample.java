@@ -13,7 +13,7 @@ public class ThreadExample {
 		System.out.println("\t\tend");
 		//obj2.stop();
 		//obj2.interrupt();
-		
+		//
 	} 
 }
 
