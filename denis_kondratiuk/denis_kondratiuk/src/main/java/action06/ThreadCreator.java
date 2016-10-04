@@ -60,7 +60,7 @@ public class ThreadCreator extends Thread {
 //		Monitor.setFileName1(readForTerminal());
 		synchronized (files) {
 			files.add(readForTerminal());
-//			files.notifyAll();
+//			filessss.notifyAll();
 		}
 //		if(treadWriter.isAlive()) {
 //					treadWriter.notifyAll();
