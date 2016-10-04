@@ -1,4 +1,4 @@
-package calculator;
+package hwWeek1.calculator;
 
 public interface Calculator{
     public final String ByZero = "Error";
