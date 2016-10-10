@@ -34,6 +34,7 @@ class ThreadCreator extends Thread {
 
 	@Override
 	public void run() {
+		System.out.println("creator start");
 		Scanner scan = new Scanner(System.in);
 		String msg = "";
 		File file1 = new File(nameFile1);
@@ -49,7 +50,9 @@ class ThreadCreator extends Thread {
 				fw.append(msg);
 				fw.flush();
 				fw.close();
-				threadWriter.notify();
+				synchronized(threadWriter) {
+					threadWriter.notify();
+				}
 			}
 		} catch (IOException exc) {
 			exc.printStackTrace();
@@ -67,15 +70,16 @@ class ThreadWriter extends Thread {
 	}
 	@Override
 	public void run() {
+		System.out.println("writer start");
 		try {
 			file2.createNewFile();
-			char ch;
+			int ch;
 			while(!isInterrupted()) {
 				if(file1.isFile()) {
 					FileWriter fw = new FileWriter(file2);
 					FileReader fr = new FileReader(file1);
-					while((ch = (char) fr.read()) != -1) {
-						fw.append(ch);
+					while((ch = fr.read()) != -1) {
+						fw.append((char) ch);
 					}
 					fr.close();
 					fw.flush();
