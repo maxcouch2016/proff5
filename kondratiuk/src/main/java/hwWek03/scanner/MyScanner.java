@@ -1,10 +1,7 @@
 package hwWek03.scanner;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 /**
  * Created by Denni on 10/8/2016.
@@ -16,10 +13,11 @@ public class MyScanner {
     StringBuffer safe;
     LinkedList<String> list = new LinkedList<>();
     private boolean ifTerminal = false;
-   
+    DataInputStream dataInputStream;
 
     public MyScanner(InputStream in) {
         bufferedReader = new BufferedReader(new InputStreamReader(in));
+        dataInputStream = new DataInputStream(in);
         ifTerminal = true;
 //        safe = new StringBuffer(1024);
     }
@@ -95,10 +93,30 @@ public class MyScanner {
     }
 
     public int nextInt() {
+        if (list.size() == 0) {
+            list = createList();
+        }
+        int value;
+        try {
+            value = Integer.parseInt(list.remove(0));
+        } catch (NumberFormatException e) {
+            throw new InputMismatchException("РЅРµ РїРѕР»СѓС‡РёР»РѕСЃСЊ");
+        }
+        return value;
+    }
 
-
-
-        return 0;
+    public boolean hasNextInt() {
+        if (list.size() == 0 && !ifTerminal) {
+            list = createList();
+        }
+        try {
+            Integer.parseInt(list.get(0));
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
 }
+
+
