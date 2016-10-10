@@ -67,6 +67,11 @@ public class App extends Application{
 		return new Scene(group, 300, 200);
 	}
 	
+	String randomString(){
+		
+		return null;
+	}
+	
 	class MyEvent implements EventHandler<Event>{
 
 		@Override
