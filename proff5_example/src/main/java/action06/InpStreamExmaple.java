@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class InpStreamExmaple {
 	public static void main(String[] args) throws Exception {
 		String file1 = "text1.txt";
-		int example = 1;
+		int example = 4;
 		 
 		if (example == 1) {
 			InputStream is = new FileInputStream(file1);
@@ -35,8 +35,8 @@ public class InpStreamExmaple {
 			System.out.println(Arrays.toString(buf));			
 		}
 		if (example == 4) {
-			BufferedReader br = new BufferedReader(new InputStreamReader(
-					System.in));
+			BufferedReader br = new BufferedReader(
+					new InputStreamReader(System.in));
 			br.readLine();
 			br.read();
 		}

@@ -5,13 +5,15 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.Serializable;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class MyService {
-
+	public static void main(String[] args) {
+		new MyServer(8085).start();
+		new MyClient(8085).start();
+	}
 }
 class MyServer extends Thread {
 	private int port;
@@ -22,7 +24,8 @@ class MyServer extends Thread {
 	public void run(){
 		ServerSocket server;
 		try {
-			server = new ServerSocket();
+			server = new ServerSocket(port);
+			System.out.println("ServerSocket started!");
 			while(isInterrupted()){
 				Socket socket = server.accept();
 				new SenderMessage(socket).start();
@@ -65,7 +68,10 @@ class MyClient extends Thread{
 			
 			InputStream is = socket.getInputStream();
 			DataInputStream dis = new DataInputStream(is);
-			String str = dis.readUTF();
+			while(true){
+				String str = dis.readUTF();
+				System.out.println(str);
+			}
 			
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
