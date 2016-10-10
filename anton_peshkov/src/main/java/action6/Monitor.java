@@ -1,6 +1,5 @@
 package action6;
 
-import java.io.File;
 
 public class Monitor {
 	ThreadCreator creator;

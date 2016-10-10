@@ -27,6 +27,7 @@ public class ThreadCreator extends Thread{
 			String s = scanner.nextLine();
 			
 			if(s.equals("exit") || s.equals("exit")) {
+				scanner.close();
 				this.interrupt();
 				isKilled = true;
 			}
