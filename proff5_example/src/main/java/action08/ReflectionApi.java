@@ -22,7 +22,6 @@ public class ReflectionApi {
 		
 		cl.getInterfaces();  
 		cl.getSuperclass();
-		
 		//methods[0].isAnnotationPresent(MyAnnotation.class);
  	}	
 }
