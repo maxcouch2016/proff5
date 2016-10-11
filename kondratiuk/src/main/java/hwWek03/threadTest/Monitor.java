@@ -10,8 +10,8 @@ public class Monitor {
     private File fileName2;
 
     public Monitor() {
-        fileName1 = new File("D:\\progects/Test_maven/FileDirectory/fileName1.txt");
-        fileName2 = new File("D:\\progects/Test_maven/FileDirectory/fileName2.txt");
+        fileName1 = new File("D:\\projects/Test_maven/FileDirectory/fileName1.txt");
+        fileName2 = new File("D:\\projects/Test_maven/FileDirectory/fileName2.txt");
     }
 
     public static void main(String[] args) {
