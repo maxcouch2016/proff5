@@ -13,7 +13,7 @@ public class MyService {
 	public static void main(String[] args) {
 		new MyServer(8085).start();
 		new MyClient(8085).start();
-		new MyClient(8085).start();
+		//new MyClient(8085).start();
 	}
 }
 
@@ -30,10 +30,9 @@ class MyServer extends Thread {
 			server = new ServerSocket(port);
 			System.out.println("ServerSocket started!");
 			while (!isInterrupted()) {
-				Socket socket = server.accept();
+				Socket socket = server.accept(); // режым ожидания
 				new SenderMessage(socket).start();
 			}
-			server.close();			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -55,12 +54,10 @@ class SenderMessage extends Thread {
 			DataOutputStream dos = new DataOutputStream(os);
 
 			while (true) {
-				sleep(500);
+				sleep(2000);// two  
 				dos.writeUTF("count=" + (count++));
-				if(1==0) break;
+				//dos.flush();
 			}
-			socket.close();
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -83,7 +80,7 @@ class MyClient extends Thread {
 			DataInputStream dis = new DataInputStream(is);
 			while (true) {
 				String str = dis.readUTF();
-				System.out.println("client:" + str);
+				System.out.println("client:\t" + str);
 			}
 
 		} catch (UnknownHostException e) {

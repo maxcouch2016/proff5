@@ -1,4 +1,4 @@
-package action07;
+package action7;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -12,7 +12,6 @@ import java.net.UnknownHostException;
 public class MyService {
 	public static void main(String[] args) {
 		new MyServer(8085).start();
-		new MyClient(8085).start();
 		new MyClient(8085).start();
 	}
 }
@@ -33,11 +32,9 @@ class MyServer extends Thread {
 				Socket socket = server.accept();
 				new SenderMessage(socket).start();
 			}
-			server.close();			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 }
 
@@ -55,12 +52,10 @@ class SenderMessage extends Thread {
 			DataOutputStream dos = new DataOutputStream(os);
 
 			while (true) {
-				sleep(500);
+				sleep(1);
 				dos.writeUTF("count=" + (count++));
-				if(1==0) break;
+				//dos.flush();
 			}
-			socket.close();
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
