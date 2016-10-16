@@ -4,26 +4,47 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class ThreadCreator extends Monitor {
-	String filename1, filename2;
+public class ThreadCreator extends Thread {
+	private String filename1 ;
 	private String temp1;
-	String file;
 	
-	public ThreadCreator() {
-		super();
-		this.filename1 ="d:/"+ getNameFile1(); 
-		this.filename2 ="d:/"+ getNameFile1();
+	
+	public ThreadCreator(String filename1) {
+	
+		this.filename1 ="d:/"+ filename1; 
 		temp1 = "";
 		
 	}
 
-	public void scan() throws IOException{
-	Scanner sc = new Scanner(System.in);
-	    temp1 =  sc.nextLine();
-	  FileWriter f1 = new FileWriter(file,true);
-	  f1.write(temp1);
-	 
 	
+	public String getFilename1() {
+		return filename1;
 	}
 
+
+	public String getTemp1() {
+		return temp1;
+	}
+
+
+
+
+	@Override
+	public void run() {
+		Scanner sc = new Scanner(System.in);
+	    temp1 =  sc.nextLine();
+	 	try {
+		FileWriter f1= new FileWriter(filename1,true);
+		f1.write(temp1);
+		
+		System.out.println("zapisano" + temp1 + "v " + filename1  );
+		f1.flush();
+		f1.close();
+	} catch (IOException e) {
+	
+		e.printStackTrace();
+	}
+	  
+		
+	}
 }
