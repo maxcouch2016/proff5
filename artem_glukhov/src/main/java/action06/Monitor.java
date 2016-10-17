@@ -25,18 +25,35 @@ public class Monitor extends Thread {
 		return nameFile2;
 	}
 	
-	@Override
-		public void run() {
-				
-	//	this.creator = new ThreadCreator(nameFile1);
-	//	this.writer = new ThreadWriter(nameFile1, nameFile2);
-}
-		
-
-public static void main(String[] args) {
 	
-	//Monitor thread1 = new ThreadWriter( getNameFile1());
-	//Monitor thread2 = new ThreadReader( getNameFile1());
+public static void main(String[] args) throws InterruptedException {
+
+	ThreadCreator thread1 = new ThreadCreator("text2.txt");
+	thread1.setName("ПОТОК 1 ");
+	//thread1.start();
+	System.out.println(thread1.getName() + thread1.getState());
+	
+	
+	
+	
+	
+	ThreadWriter thread2 = new ThreadWriter("text1.txt", "text3.txt");
+	//thread2.setDaemon(true);
+	thread2.setName("ПОТОК 2 ");
+	while(thread1.isAlive()==false){
+			try{
+				thread2.start();
+				System.out.println(thread2.getName() + thread2.getState());
+				thread2.sleep(1000);
+				}
+	catch(InterruptedException e){e.printStackTrace();}
+	
+	}
+	System.out.println(thread2.getName()+thread1.getState());
+
+thread2.start();
+	
 }
 }
+
 
