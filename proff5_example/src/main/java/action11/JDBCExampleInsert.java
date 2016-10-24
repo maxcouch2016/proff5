@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class JDBCExample {
+public class JDBCExampleInsert {
  
 	private static String nameDriver = "com.mysql.jdbc.Driver";
 	private static String url = "jdbc:mysql://localhost:3306/proff5";
@@ -20,25 +20,20 @@ public class JDBCExample {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
+		
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("insert into users ");
+		sb.append("( `name`, `login`, `pass`, `employee_id`) values");
+		sb.append("('userX', 'userX', '5', 0);");
 
-		String query = "insert * from users";
 		Connection connect = null;
 		try {
 			connect = DriverManager.getConnection(url, login, pass);
 			Statement statement = connect.createStatement();
-			ResultSet rs = statement.executeQuery(query);
-			while (rs.next()) {
-				System.out.print(rs.getString(1) + ", ");
-				System.out.print(rs.getString(2) + ", ");
-
-				System.out.print(rs.getString(3) + ", ");
-				System.out.print(rs.getString(4) + ", ");
-				if (rs.getString(5) == null)
-					System.out.print("empty,");
-				else
-					System.out.print(rs.getInt(5) + ", ");				
-				System.out.println();
-			}
+			int countChange = statement.executeUpdate(sb.toString());
+			System.out.println("countChange="+countChange);
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

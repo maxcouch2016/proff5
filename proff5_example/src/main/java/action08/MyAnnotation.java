@@ -15,7 +15,7 @@ public class MyAnnotation {
 		field.setAccessible(true);
 		field.get(myO);
 		field.set(myO, null);
-		if(field.getType() == Integer.class){} 
+		if(field.getType().getSimpleName().equals("String")){} 
 		
 	}
 }
