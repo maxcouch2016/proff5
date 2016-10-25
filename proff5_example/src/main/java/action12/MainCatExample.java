@@ -10,13 +10,13 @@ import util.HibernateUtil;
 
 public class MainCatExample {
 	private static Logger log = Logger.getLogger(MainCatExample.class);
-	
+
 	public static void main(String[] args) {
 		SessionFactory factory = HibernateUtil.getSessionFactory();
 		Session session = factory.openSession();
-		
+
 		Cat cat = new Cat("Барсик", "Black");
-		try{
+		try {
 			session.beginTransaction();
 			session.save(cat);
 			session.getTransaction().commit();
@@ -26,6 +26,8 @@ public class MainCatExample {
 		} finally {
 			if (session != null)
 				session.close();
+			if (factory != null)
+				factory.close();
 		}
 	}
 }

@@ -19,7 +19,6 @@
 		<property name="hbm2ddl.auto">update</property>
 
 		<mapping class="domain.Cat" />
-		<mapping class="domain.Dog" />
 
 		
 	</session-factory>
