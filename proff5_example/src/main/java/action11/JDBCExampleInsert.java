@@ -23,16 +23,18 @@ public class JDBCExampleInsert {
 		
 		StringBuilder sb = new StringBuilder();
 		
+		String str = "userX";
+		
 		sb.append("insert into users ");
 		sb.append("( `name`, `login`, `pass`, `employee_id`) values");
-		sb.append("('userX', 'userX', '5', 0);");
+		sb.append("('"+str+"', 'userX', '5', 0);");
 
 		Connection connect = null;
 		try {
 			connect = DriverManager.getConnection(url, login, pass);
 			Statement statement = connect.createStatement();
 			int countChange = statement.executeUpdate(sb.toString());
-			System.out.println("countChange="+countChange);
+			System.out.println("countChange=" + countChange);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
