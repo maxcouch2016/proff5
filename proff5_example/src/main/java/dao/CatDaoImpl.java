@@ -9,13 +9,15 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import domain.Cat;
+import util.HibernateUtil;
 
 public class CatDaoImpl implements CatDao{
 	
 	private static Logger log = Logger.getLogger(CatDaoImpl.class);
 	
-	private SessionFactory sessionFactory;
+	//SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 	
+	private SessionFactory sessionFactory;
 	public CatDaoImpl(SessionFactory sf){
 		sessionFactory = sf;;
 	}
