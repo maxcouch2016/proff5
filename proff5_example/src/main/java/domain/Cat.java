@@ -29,6 +29,13 @@ public class Cat {
 	public String toString() {
 		return "Cat [id=" + id + ", name=" + name + ", color=" + color + "]";
 	}
+	
+	public Cat(String name, String color) {
+		super();
+		this.name = name;
+		this.color = color;
+	}
+
 	public Cat(Long id, String name, String color) {
 		super();
 		this.id = id;
