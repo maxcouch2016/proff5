@@ -33,7 +33,7 @@ public class MainContructors {
 				if (session != null)
 					session.close();
 			}
-			session.close();
+	
 		}
 	
 }

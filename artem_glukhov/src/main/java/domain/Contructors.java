@@ -18,7 +18,16 @@ public class Contructors {
 	
 	@Column
 	 private String name;
+	
+	
+	
+public Contructors(Long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
 
+	//***************************
 	public Long getId() {
 		return id;
 	}
