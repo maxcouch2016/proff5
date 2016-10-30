@@ -4,7 +4,6 @@ import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
 import domain.Cat;
 import util.HibernateUtil;
 
@@ -19,7 +18,6 @@ public class MainCatExample2 {
 			session = factory.openSession();
 			log.info("session opened!");
 			session.beginTransaction();
-
 			Cat cat = (Cat) session.get(Cat.class, 1L);
 			System.out.println("old cat = "+cat.toString());
 			cat.setName("Зайка");

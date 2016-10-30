@@ -7,7 +7,7 @@
 	<session-factory>
 		<!-- properties -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://localhost/proff5</property>
+		<property name="connection.url">jdbc:mysql://localhost/hometaskmysql_market</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
 
@@ -19,7 +19,9 @@
 		<property name="hbm2ddl.auto">update</property>
 
 		<mapping class="domain.Cat" />
-		
+		<mapping class="domain.Contructors" />
+		<mapping class="domain.Employees" />
+		<mapping class="domain.Messages" />
 
 		
 	</session-factory>
