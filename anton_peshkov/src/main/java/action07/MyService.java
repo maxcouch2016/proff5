@@ -1,4 +1,4 @@
-package action7;
+package action07;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

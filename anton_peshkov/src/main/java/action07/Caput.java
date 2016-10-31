@@ -1,4 +1,4 @@
-package action7;
+package action07;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -62,7 +62,7 @@ class ServerList extends Thread {
 			while (true) {
 				String str = dis.readUTF();
 				list.add(str);
-				if(str.equals("Full Caput")){
+				if(str.equalsIgnoreCase("exit")){
 					list.forEach(System.out::println);
 					break;
 				}
