@@ -1,4 +1,4 @@
-package action6;
+package action06;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,7 +15,7 @@ public class MyFile {
 		this.name = new File(name);
 	}
 
-	public String read() {
+	public synchronized String read() {
 		try {
 			reader = new FileReader(this.name);
 		} catch (FileNotFoundException e) {
@@ -37,7 +37,7 @@ public class MyFile {
 		return builder.toString();
 	}
 
-	public void write(String text) {
+	public synchronized void write(String text) {
 		try {
 			writer = new FileWriter(this.name);
 			writer.write(text);
