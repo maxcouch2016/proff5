@@ -6,11 +6,9 @@ import java.util.Map;
 
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.util.Assert;
 
 import action14.task01.Company;
 import action14.task01.Human;
-import action14.task01.MainCompany;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
