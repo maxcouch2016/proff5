@@ -104,3 +104,11 @@
 2016-10-25 21:40:19,312 [main] INFO  org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
 2016-10-25 21:40:19,312 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
 2016-10-25 21:40:19,828 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000030: Cleaning up connection pool [jdbc:mysql://localhost/proff5]
+2016-11-01 20:15:34,062 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1f95c5d: startup date [Tue Nov 01 20:15:34 EET 2016]; root of context hierarchy
+2016-11-01 20:15:34,390 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [action14_spring1/config1.xml]
+2016-11-01 20:16:37,703 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1f95c5d: startup date [Tue Nov 01 20:16:37 EET 2016]; root of context hierarchy
+2016-11-01 20:16:37,796 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [action14_spring1/config1.xml]
+2016-11-01 20:40:01,171 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@80a178: startup date [Tue Nov 01 20:40:01 EET 2016]; root of context hierarchy
+2016-11-01 20:40:01,312 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [action14_spring2/config.xml]
+2016-11-01 20:43:55,421 [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@80a178: startup date [Tue Nov 01 20:43:55 EET 2016]; root of context hierarchy
+2016-11-01 20:43:55,515 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [action14_spring2/config.xml]

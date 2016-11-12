@@ -11,8 +11,8 @@ public class MainHouseLift1 {
 		if(scan.hasNext()){
 			scan.nextLine();
 		}
-		ApplicationContext context = new ClassPathXmlApplicationContext("action17_spring1/config1.xml");
-
+		ApplicationContext context = new ClassPathXmlApplicationContext("action14_spring1/config1.xml");
+		
 		Lift lift = (Lift) context.getBean("idLift");//указываем id нашего bean-а
         System.out.println(lift);
         

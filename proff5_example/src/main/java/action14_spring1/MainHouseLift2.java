@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainHouseLift2 {
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("action17_spring1/config2.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("action14_spring1/config2.xml");
 		
       
         House house = (House) context.getBean("house");

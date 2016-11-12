@@ -10,15 +10,15 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class ResourceAction {
-	@Pointcut("execution(* action17_spring2.Perform.perform(..))")
-	public void perfomance(){
+	@Pointcut("execution(* action14_spring2.Perform.perform(..))")
+	public void perfomance1(){
 	}
 	
-	@Before("perfomance()")
+	@Before("perfomance1()")
 	public void open(){
 		System.out.println("Before: open resource");
 	}
-	@After("perfomance()")
+	@After("perfomance1()")
 	public void close(){
 		System.out.println("After: close resource");
 	}	

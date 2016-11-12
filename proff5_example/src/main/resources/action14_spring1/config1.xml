@@ -13,7 +13,7 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 	
 	<bean id="idLift" class="action14_spring1.Lift">
 		<constructor-arg value="POSCO" />
-		<property name="operator" value="Vasilchishin S. A." />
+		<property name="operator" value="Kopeykin R. I." />
 	</bean>
 
 	<bean id="idHouse" class="action14_spring1.House">
