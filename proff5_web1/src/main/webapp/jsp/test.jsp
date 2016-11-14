@@ -18,12 +18,33 @@
 		$("#text2").val("jQeury");
 		$("#text2").css("background", "maroon");
 		$("#text2").css("color", "white");
-		$("input").prop('disabled', 'true');
+		//$("input").prop('disabled', 'true');
+	}
+	function myAjaxFirst(){
+		var text = $("#textToExampleOfAjax").val();
+		console.log('text='+text);
+	    $.ajax({
+	        dataType: 'json',
+	    	type: "POST",
+	    	data: "text1=" + text,
+	    	url:'/proff5_web1/ajax',
+	        success: function(data){
+	            //$("#block").html(data.result);
+	        	$("#block").append(data.result);
+	        },
+	        error: function() {
+	            alert("Error!");
+	        }
+	    });
+
 	}
 	$(document).ready(function() {
 		$(".btn").click(function(){
 			console.log('client ...');
 			$("#text1, #text2").css("font-weight", "bold");
+		});
+		$("#ExampleOfAjax").click(function(){
+			myAjaxFirst();
 		});
 	});
 </script>
@@ -34,8 +55,14 @@
 	<input type="button" onclick="alert(1)" value="кнопа 1">
 	<input type="button" onmouseover="myClick()" value="кнопа 2">
 	
-	<br><br>
+	<hr>
 	<input type="button" class="btn">
 	// alert(text); console.log(text); 
+	
+	<hr>
+	
+	<input type="text" id="textToExampleOfAjax">
+	<input type="button" value="ExampleOfAjax" id="ExampleOfAjax">
+	<div id="block">1</div>
 </body>
 </html>
