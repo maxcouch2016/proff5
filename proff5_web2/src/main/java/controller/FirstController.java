@@ -6,31 +6,24 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/first")
 public class FirstController extends HttpServlet{
-	
-	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/jsp/first.jsp");
-		dispatcher.forward(request, response);
-	}
-	List<String> list = new ArrayList();
-			
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String str = request.getParameter("polk");
-		list.add(str);
 		
-		request.setAttribute("nabor", list);
+		List<String> list = new ArrayList<>();
+		list.add("Привет");
+		list.add("Hello");
+		list.add("Hi");
+		list.add("How do you do!");
+		request.setAttribute("list", list);
 		
-		
-		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/jsp/first.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/first.jsp");
 		dispatcher.forward(request, response);
 	}
 }
