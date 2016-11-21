@@ -8,6 +8,6 @@
 </head>
 <body>
 	Home page
-	<a href="/proff2_spring_mvc3/forms">Перейти на другую страницу </a>
+	<a href="/proff5_spring_mvc2/forms">Перейти на другую страницу </a>
 </body>
 </html>

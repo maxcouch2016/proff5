@@ -19,7 +19,6 @@ public class HomeController {
 	public String showListUsersPage(Map<String, Object> model){
 		ArrayList<String> list = new ArrayList<>(Arrays.asList("name1", "name2", "name3"));
 		model.put("names", list);
-		return "users";
-		
+		return "users";		
 	}
 }
