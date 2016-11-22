@@ -49,5 +49,10 @@ public class Contructors {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public String toString() {
+		return "Contructors [id=" + id + ", name=" + name + "]";
+	}
 	
 }
